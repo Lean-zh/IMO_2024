@@ -24,7 +24,7 @@ theorem imo_2024_p2 : {(a, b) | 0 < a ∧ 0 < b ∧ ∃ g N, 0 < g ∧ 0 < N ∧
     have:b.1+b.2∣Y:=?_
     · suffices: b.1= b.2
       · norm_num[b.ext_iff,<-D.2.2 L,this]at*
-        use(pow_lt_pow (g.1.nat_succ_le.lt_of_ne' i) (by left)).ne' (D.2.2 _ L.le_succ)
+        use(pow_lt_pow_right (g.1.nat_succ_le.lt_of_ne' i) (by left)).ne' (D.2.2 _ L.le_succ)
       suffices:b.1+b.2∣b.fst^ (2 *L) +b.2 ∧(b).fst +(b).snd ∣ b.snd^ (2 *L)+b.1
       · suffices:b.1^2%(b.1+b.2)=b.2^2%(b.1+b.snd)
         · norm_num[Nat.add_mod,pow_mul,this,Nat.dvd_iff_mod_eq_zero,Nat.pow_mod]at*
